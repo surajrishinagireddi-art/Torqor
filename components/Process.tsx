@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 const steps = [
   {
@@ -33,7 +33,7 @@ export default function Process() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.6, ease: "easeOut" as const }}
           className="mb-16 max-w-2xl"
         >
           <p className="text-[#2563EB] text-xs tracking-[0.15em] uppercase font-medium mb-3">
@@ -55,7 +55,7 @@ export default function Process() {
               initial={{ scaleX: 0 }}
               whileInView={{ scaleX: 1 }}
               viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" as const }}
               className="absolute top-[2.25rem] left-0 right-0 h-px bg-[#1F2124] origin-left"
               style={{ zIndex: 0 }}
             />
@@ -67,7 +67,7 @@ export default function Process() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-60px" }}
-                  transition={{ delay: i * 0.12, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+                  transition={{ delay: i * 0.12, duration: 0.55, ease: "easeOut" as const }}
                   className="flex flex-col"
                 >
                   {/* Number badge */}
@@ -93,7 +93,7 @@ export default function Process() {
             initial={{ scaleY: 0 }}
             whileInView={{ scaleY: 1 }}
             viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 1, delay: 0.3, ease: "easeOut" as const }}
             className="absolute left-[2.25rem] top-0 bottom-0 w-px bg-[#1F2124] origin-top"
           />
           <div className="flex flex-col gap-10">
@@ -103,7 +103,7 @@ export default function Process() {
                 initial={{ opacity: 0, x: -16 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
-                transition={{ delay: i * 0.1, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ delay: i * 0.1, duration: 0.55, ease: "easeOut" as const }}
                 className="flex gap-6 items-start"
               >
                 <div className="w-[4.5rem] h-[4.5rem] rounded-full bg-[#1A1C1F] border border-[#2a2d32] flex items-center justify-center shrink-0 relative z-10">

@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { CheckIcon } from "./ui/icons";
 
 const outcomes = [
@@ -35,7 +35,7 @@ export default function Results() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.6, ease: "easeOut" as const }}
             className="mb-12 lg:mb-0 lg:sticky lg:top-32"
           >
             <p className="text-[#2563EB] text-xs tracking-[0.15em] uppercase font-medium mb-3">
@@ -61,7 +61,7 @@ export default function Results() {
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
-                transition={{ delay: i * 0.1, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ delay: i * 0.1, duration: 0.55, ease: "easeOut" as const }}
                 className="py-7 border-b border-[#1F2124] first:border-t first:pt-7"
               >
                 <div className="flex items-start gap-4">
