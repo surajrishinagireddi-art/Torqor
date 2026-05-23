@@ -16,7 +16,12 @@
       "Bash(pkill -f \"next dev\")",
       "Bash(xargs kill -9)",
       "Bash(kill 17648)",
-      "Bash(git init *)"
+      "Bash(git init *)",
+      "Bash(git remote *)",
+      "Bash(git branch *)",
+      "Bash(git push *)",
+      "Bash(gh auth *)",
+      "Bash(ssh -T git@github.com)"
     ]
   }
 }

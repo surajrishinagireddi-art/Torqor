@@ -1,16 +1,16 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import Button from "./ui/Button";
 import LogoWordmark from "./ui/LogoWordmark";
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 24 },
-  show: (i: number) => ({
+  show: {
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.1, duration: 0.6, ease: [0.22, 1, 0.36, 1] },
-  }),
+    transition: { duration: 0.6, ease: "easeOut" as const },
+  },
 };
 
 export default function Hero() {
@@ -65,7 +65,6 @@ export default function Hero() {
       <div className="relative z-10 w-full max-w-7xl px-6 py-24 md:py-32 text-left">
         {/* Wordmark */}
         <motion.div
-          custom={0}
           initial="hidden"
           animate="show"
           variants={fadeUp}
@@ -78,7 +77,6 @@ export default function Hero() {
 
         {/* Headline */}
         <motion.h2
-          custom={1}
           initial="hidden"
           animate="show"
           variants={fadeUp}
@@ -90,7 +88,6 @@ export default function Hero() {
 
         {/* Subheadline */}
         <motion.p
-          custom={2}
           initial="hidden"
           animate="show"
           variants={fadeUp}
@@ -102,7 +99,6 @@ export default function Hero() {
 
         {/* CTAs */}
         <motion.div
-          custom={3}
           initial="hidden"
           animate="show"
           variants={fadeUp}
@@ -118,7 +114,6 @@ export default function Hero() {
 
         {/* Trust line */}
         <motion.p
-          custom={4}
           initial="hidden"
           animate="show"
           variants={fadeUp}
