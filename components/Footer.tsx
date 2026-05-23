@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { LinkedInIcon } from "./ui/icons";
+import QMark from "./ui/QMark";
 
 const navLinks = [
   { label: "Services", href: "#services" },
@@ -22,8 +23,16 @@ export default function Footer() {
           className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6"
         >
           {/* Logo */}
-          <a href="#" className="font-heading font-bold text-base tracking-tight text-[#F5F7FA]">
-            TOR<span className="text-[#2563EB]">Q</span>OR
+          <a
+            href="#"
+            className="flex items-center font-heading font-bold text-base tracking-tight text-[#F5F7FA]"
+          >
+            <span>TOR</span>
+            <QMark
+              height="0.87em"
+              style={{ margin: "0 -0.04em", position: "relative", top: "0.01em" }}
+            />
+            <span>OR</span>
           </a>
 
           {/* Nav links */}

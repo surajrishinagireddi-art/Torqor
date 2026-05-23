@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Button from "./ui/Button";
+import LogoWordmark from "./ui/LogoWordmark";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -14,52 +15,65 @@ const fadeUp = {
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden pt-16">
-      {/* Atmospheric glow behind the Q */}
+    <section
+      className="relative min-h-screen flex items-center overflow-hidden pt-16"
+      style={{
+        background:
+          "radial-gradient(ellipse at right center, rgba(37,99,235,0.12) 0%, transparent 60%)",
+      }}
+    >
+      {/* Soft radial glow behind the atmospheric Q */}
       <div
         aria-hidden
-        className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 w-[55vw] max-w-[700px] aspect-square"
+        className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse 60% 60% at 70% 50%, rgba(37,99,235,0.12) 0%, rgba(37,99,235,0.04) 40%, transparent 70%)",
+            "radial-gradient(ellipse at 80% 50%, rgba(37,99,235,0.14) 0%, transparent 55%)",
+          zIndex: 0,
         }}
       />
 
-      {/* Giant faded Q watermark */}
-      <div
+      {/* Atmospheric Q — q-mark.png asset, enlarged, bleeding off right edge */}
+      <motion.div
         aria-hidden
-        className="pointer-events-none absolute right-[-4vw] md:right-[-2vw] top-1/2 -translate-y-1/2 select-none"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.8, ease: "easeOut", delay: 0.3 }}
+        className="pointer-events-none absolute select-none"
+        style={{
+          right: "-15%",
+          top: "50%",
+          transform: "translateY(-50%)",
+          width: "75vw",
+          zIndex: 0,
+        }}
       >
-        <motion.span
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.4, ease: "easeOut", delay: 0.3 }}
-          className="font-heading font-bold text-[28vw] md:text-[22vw] leading-none tracking-tighter"
+        <img
+          src="/q-mark.png"
+          alt=""
           style={{
-            color: "transparent",
-            WebkitTextStroke: "1.5px rgba(37,99,235,0.15)",
-            textShadow: "0 0 80px rgba(37,99,235,0.06)",
+            width: "100%",
+            height: "auto",
+            display: "block",
+            mixBlendMode: "screen",
+            opacity: 0.10,
+            filter: "blur(2px)",
           }}
-        >
-          Q
-        </motion.span>
-      </div>
+        />
+      </motion.div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-24 md:py-32">
+      <div className="relative z-10 w-full max-w-7xl px-6 py-24 md:py-32 text-left">
         {/* Wordmark */}
         <motion.div
           custom={0}
           initial="hidden"
           animate="show"
           variants={fadeUp}
-          className="mb-8 md:mb-10"
+          className="mb-10"
         >
-          <h1
-            className="font-heading font-bold leading-none tracking-tighter text-[#F5F7FA]"
-            style={{ fontSize: "clamp(3rem, 10vw, 8rem)" }}
-          >
-            TOR<span className="text-[#2563EB]">Q</span>OR
-          </h1>
+          <div className="w-[490px]">
+            <LogoWordmark />
+          </div>
         </motion.div>
 
         {/* Headline */}
@@ -69,7 +83,7 @@ export default function Hero() {
           animate="show"
           variants={fadeUp}
           className="font-heading font-bold text-[#F5F7FA] leading-tight max-w-2xl mb-5"
-          style={{ fontSize: "clamp(1.6rem, 3.5vw, 2.6rem)" }}
+          style={{ fontSize: "clamp(36px, 5vw, 64px)" }}
         >
           Reclaim time from<br />operational chaos.
         </motion.h2>
@@ -92,7 +106,7 @@ export default function Hero() {
           initial="hidden"
           animate="show"
           variants={fadeUp}
-          className="flex flex-col sm:flex-row gap-3 mb-16"
+          className="flex flex-col sm:flex-row items-start gap-3 mb-16"
         >
           <Button href="#contact" variant="primary" className="px-6 py-3.5 text-base">
             Book Founder Audit

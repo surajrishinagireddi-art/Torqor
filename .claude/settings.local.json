@@ -11,7 +11,12 @@
       "mcp__Claude_in_Chrome__get_page_text",
       "mcp__Claude_in_Chrome__tabs_context_mcp",
       "Bash(git add *)",
-      "Bash(git commit -m ' *)"
+      "Bash(git commit -m ' *)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(pkill -f \"next dev\")",
+      "Bash(xargs kill -9)",
+      "Bash(kill 17648)",
+      "Bash(git init *)"
     ]
   }
 }

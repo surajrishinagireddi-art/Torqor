@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Button from "./ui/Button";
 import { MenuIcon, CloseIcon } from "./ui/icons";
+import LogoWordmark from "./ui/LogoWordmark";
 
 const navLinks = [
   { label: "Services", href: "#services" },
@@ -15,10 +16,10 @@ const navLinks = [
 
 function Logo() {
   return (
-    <a href="#" className="flex items-center gap-0 font-heading font-bold text-lg tracking-tight text-[#F5F7FA]">
-      TOR
-      <span className="text-[#2563EB]">Q</span>
-      OR
+    <a href="#">
+      <div className="w-[120px]">
+        <LogoWordmark />
+      </div>
     </a>
   );
 }
@@ -51,7 +52,7 @@ export default function Navbar() {
             : "bg-transparent border-b border-transparent"
         }`}
       >
-        <nav className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+        <nav className="max-w-7xl mx-auto pl-2 pr-6 h-16 flex items-center justify-between">
           <Logo />
 
           {/* Desktop links */}
