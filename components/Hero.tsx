@@ -18,6 +18,7 @@ export default function Hero() {
     <section
       className="relative min-h-screen flex items-center overflow-hidden pt-16"
       style={{
+        overflowX: "hidden",
         background:
           "radial-gradient(ellipse at right center, rgba(37,99,235,0.12) 0%, transparent 60%)",
       }}
@@ -39,15 +40,17 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.8, ease: "easeOut", delay: 0.3 }}
-        className="pointer-events-none absolute select-none"
-        style={{
-          right: "-15%",
-          top: "50%",
-          transform: "translateY(-50%)",
-          width: "75vw",
-          zIndex: 0,
-        }}
+        className="atm-q pointer-events-none absolute select-none"
+        style={{ top: "50%", transform: "translateY(-50%)", zIndex: 0 }}
       >
+        <style>{`
+          .atm-q { right: -25%; width: 100vw; }
+          .atm-q img { opacity: 0.05; }
+          @media (min-width: 768px) {
+            .atm-q { right: -15%; width: 75vw; }
+            .atm-q img { opacity: 0.10; }
+          }
+        `}</style>
         <img
           src="/q-mark.png"
           alt=""
@@ -56,7 +59,6 @@ export default function Hero() {
             height: "auto",
             display: "block",
             mixBlendMode: "screen",
-            opacity: 0.10,
             filter: "blur(2px)",
           }}
         />
@@ -70,7 +72,7 @@ export default function Hero() {
           variants={fadeUp}
           className="mb-10"
         >
-          <div className="w-[490px]">
+          <div className="w-[85vw] md:w-[490px] max-w-full">
             <LogoWordmark />
           </div>
         </motion.div>
